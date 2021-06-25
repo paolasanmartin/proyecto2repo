@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/bienvenido.css' %}">  
+    <script src="{% static 'js/script.js' %}"></script>
     <title>Document</title>
 </head>
-<body>
-<h1> Bienvenido </h1>
-<ul>
-<li><a href="/register">Registro</a></li>
-<li><a href="/login">Login</a></li>
-</ul>
-<p>Explicacion de que trata la pag</p>
-</body>
-</html>
+<body> 
+    <div class="mobile-screen">
+        <div class="header">
+          <h1>Ingreso</h1>
+        </div>
+        
+        <div class="logo"></div>
+        
+        <form id="registration-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" id="submit">Registarse</button>
+            </form>
+          <a href="/register" class="login-btn" id="signup-btn">Registrarse</a>
+        </form>
+      
+        <form id="login-form">
+          <a href="/login" class="login-btn">Ingreso</a>
+        </form>
+        
+        <div class="other-options">
+          <div class="option" id="newUser"><p class="option-text">Nuevo usuario</p></div>
+          
+        </div>
+        
+      </div>
+    
+      </body>
